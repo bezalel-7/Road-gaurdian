@@ -1,0 +1,21 @@
+# Use the official Node.js image as the base image
+FROM node:14
+
+# Set the working directory inside the container
+WORKDIR /app/client
+
+# Copy the package.json and package-lock.json to the container's /app/client directory
+COPY app/client/package*.json /app/client/
+
+# Install dependencies for the client app
+RUN npm install
+
+# Copy the rest of the client app files to the container's /app/client directory
+COPY app/client/ /app/client/
+
+# Expose the port that the client app will run on (inside the container)
+EXPOSE 3000
+
+# Command to start the client app
+CMD ["npm", "start"]
+

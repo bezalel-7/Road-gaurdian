@@ -1,0 +1,23 @@
+# Use the official Node.js image as the base image
+FROM node:14
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the server.js to the container's /app directory
+COPY app/server.js /app/
+
+# Set the working directory to the app directory
+WORKDIR /app
+
+# Install dependencies for the server.js
+# Assuming that package.json for server.js is in the root of the app folder
+COPY package*.json ./
+RUN npm install
+
+# Expose the port that the server will run on (inside the container)
+EXPOSE 3001
+
+# Command to start the Node.js server
+CMD ["node", "server.js"]
+
