@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap");
+
+.App {
+  background-color: rgb(255, 255, 255);
+  color: white;
+  font-family: "Helvetica";
+  font-size: 15px;
+  font-style: bold;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-height: 768px) {
+  .App {
+    transform: scale(1, 1.009);
+  }
+}
